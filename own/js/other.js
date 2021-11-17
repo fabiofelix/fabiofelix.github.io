@@ -2,9 +2,7 @@
 {
   if(navigator.language.match("pt") != null && window.location.pathname.match("pt") == null )
     window.location.replace(window.location + "pt-BR")
-  if(window.location.pathname.match("pt") != null)  
-    $(".image:before").css("background",  "../" + $(".image:before").css("background"))
-
+    
   $("#more-less-button").click(function(evnt)
   {
     evnt.preventDefault();
