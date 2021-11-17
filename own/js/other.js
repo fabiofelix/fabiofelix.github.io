@@ -1,10 +1,25 @@
 (function($) 
 {
+  if(navigator.language.match("pt") != null && window.location.pathname.match("pt") == null )
+    window.location.replace(window.location + "pt-BR")
+  if(window.location.pathname.match("pt") != null)  
+    $(".image:before").css("background",  "../" + $(".image:before").css("background"))
+
   $("#more-less-button").click(function(evnt)
   {
     evnt.preventDefault();
 
-    var more = $(this).html() == "More";
+    var more_desc = "More",
+        less_desc = "Less";
+
+    if (navigator.language.match("pt") != null)
+    {
+      more_desc = "Mais"
+      less_desc = "Menos"
+    }
+
+
+    var more = $(this).html() == more_desc;
     var has_more = $("#more-less-div").html() !== "";
 
     if(has_more)
@@ -12,12 +27,12 @@
       if(more)
       {
         $("#more-less-div").slideDown();
-        $(this).html("Less");
+        $(this).html(less_desc);
       }
       else
       {
         $("#more-less-div").slideUp();
-        $(this).html("More");
+        $(this).html(more_desc);
       }
     }
 
