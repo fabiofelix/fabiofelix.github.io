@@ -2,7 +2,9 @@
 {
   if(navigator.language.match("pt") != null && window.location.pathname.match("pt") == null )
     window.location.replace(window.location + "pt-BR")
-    
+  else if(navigator.language.match("pt") == null && window.location.pathname.match("pt") != null )    
+    window.location.replace(window.location.href.split("pt")[0])
+
   $("#more-less-button").click(function(evnt)
   {
     evnt.preventDefault();
