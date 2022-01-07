@@ -5,7 +5,7 @@
   else if(navigator.language.match("pt") == null && window.location.pathname.match("pt") != null )    
     window.location.replace(window.location.href.split("pt")[0])
 
-  $("#more-less-button").click(function(evnt)
+  $(".more-less-button").click(function(evnt)
   {
     evnt.preventDefault();
 
@@ -18,20 +18,22 @@
       less_desc = "Menos"
     }
 
-
     var more = $(this).html() == more_desc;
-    var has_more = $("#more-less-div").html() !== "";
+    var name = $(this).attr("id").split("-")[3];
+    var div_name = "#more-less-div-" + name;
+    // var div_name = "#more-less-div"
+    var has_more = $(div_name).html() !== "";
 
     if(has_more)
     {
       if(more)
       {
-        $("#more-less-div").slideDown();
+        $(div_name).slideDown();
         $(this).html(less_desc);
       }
       else
       {
-        $("#more-less-div").slideUp();
+        $(div_name).slideUp();
         $(this).html(more_desc);
       }
     }
