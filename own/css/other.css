@@ -1,5 +1,15 @@
 
+#header 
+{
+  padding: 8em 3em;
+}
+
 .more-less-div
 {
   display: none;
+}
+
+.pt-br:after
+{
+  content: 'Abrir';
 }
