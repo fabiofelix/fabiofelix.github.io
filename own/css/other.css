@@ -4,17 +4,29 @@
   padding: 8em 3em;
 }
 
-.more-less-div
+#abstract
+{
+  /* margin: 0 0 0 0; */
+  text-align: justify;
+}
+
+/* copied from bootstratp traintisions.css */
+.collapse 
 {
   display: none;
 }
 
-.pt-br:after
+.collapse.show 
 {
-  content: 'Abrir';
-}
-
-#abstract
-{
+  display: block;
   text-align: justify;
 }
+
+.collapsing 
+{
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height .35s ease
+}
+
